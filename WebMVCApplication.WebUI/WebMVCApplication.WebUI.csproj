@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -5536,6 +5537,9 @@
     <Content Include="_AdminTemplate\vendors\themify-icons\fonts\themify.ttf" />
     <Content Include="_AdminTemplate\vendors\themify-icons\fonts\themify.woff" />
     <Content Include="_AdminTemplate\vendors\themify-icons\README.md" />
+    <Content Include="Views\Account\Signin.cshtml" />
+    <Content Include="Views\Account\Signup.cshtml" />
+    <Content Include="Views\Account\Signout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebMVCApplication.Domain\WebMVCApplication.Domain.csproj">
@@ -5548,7 +5552,6 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="_AdminTemplate\vendors\popper.js\packages\popper\index.d.ts" />
-    <TypeScriptCompile Include="_AdminTemplate\vendors\popper.js\packages\tooltip\index.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

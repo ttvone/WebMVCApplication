@@ -1,3 +1,12 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout2.cshtml";
+    switch (ViewContext.ViewBag.Layout)
+    {
+        case "Layout2":
+            Layout = "~/Views/Shared/_Layout2.cshtml";
+            break;
+
+        default:
+            Layout = "~/Views/Shared/_Layout1.cshtml";
+            break;
+    }
 }

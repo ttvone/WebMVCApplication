@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Sufee Admin - HTML5 Admin Template";
+    ViewBag.Title = "HTML5 Admin Template";
 }
 
 <div class="content mt-3">
@@ -382,4 +382,24 @@
 </div> <!-- .content -->
 
 @section styles     { @Styles.Render("~/styles/dashboard") }
-@section scripts    { @Scripts.Render("~/scripts/dashboard") }
+@section scripts    {
+    @Scripts.Render("~/scripts/dashboard")
+    <script>
+        (function ($) {
+            "use strict";
+
+            $('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
+}

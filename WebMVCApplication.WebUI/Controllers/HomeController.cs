@@ -10,6 +10,8 @@ namespace WebMVCApplication.WebUI.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Layout = "Layout2";
+
             return View();
         }
     }
