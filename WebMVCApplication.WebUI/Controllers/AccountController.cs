@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMVCApplication.WebUI.Models;
 
 namespace WebMVCApplication.WebUI.Controllers
 {
@@ -15,6 +16,17 @@ namespace WebMVCApplication.WebUI.Controllers
         }
 
         public ActionResult Signup()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Signup(Signup model)
+        {
+            return Json(model);
+        }
+
+        public ActionResult ForgotPassword()
         {
             return View();
         }

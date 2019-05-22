@@ -15,6 +15,7 @@ namespace WebMVCApplication.WebUI
            ));
 
             bundles.Add(new StyleBundle("~/scripts/assets").Include(
+                "~/Assets/js/vue.js",
                 "~/Assets/js/main.js"
             ));
 

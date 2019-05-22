@@ -2,7 +2,7 @@
     ViewBag.Title = "Signup";
 }
 
-<div class="sufee-login d-flex align-content-center flex-wrap">
+<div class="sufee-login d-flex align-content-center flex-wrap" id="app">
     <div class="container">
         <div class="login-content">
             <div class="login-logo">
@@ -11,18 +11,18 @@
                 </a>
             </div>
             <div class="login-form">
-                <form>
+                <form v-on:submit.prevent="onSubmit()">
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" v-model="model.email" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" v-model="model.password" required>
                     </div>
                     <div class="form-group">
                         <label>Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" v-model="model.confirm_password" required>
                     </div>
                     <div class="checkbox">
                         <label>
@@ -41,3 +41,29 @@
     </div>
 </div>
 
+@section scripts {
+    <script>
+        (function ($) {
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    model: {}
+                },
+                methods: {
+                    onSubmit: function () {
+                        $.ajax({
+                            method: 'post',
+                            data: this.model,
+                            success: function (result) {
+                                console.log("result", result);
+                            },
+                            error: function (error) {
+                                console.log("error", error);
+                            }
+                        });
+                    }
+                }
+            });
+        })(jQuery);
+    </script>
+}

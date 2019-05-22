@@ -147,6 +147,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructures\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Signup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,7 @@
     <Content Include="Assets\js\init-scripts\peitychart\peitychart.init.js" />
     <Content Include="Assets\js\init-scripts\vector-map\vector.init.js" />
     <Content Include="Assets\js\main.js" />
+    <Content Include="Assets\js\vue.js" />
     <Content Include="Assets\js\widgets.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -4215,7 +4217,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\style.css.map" />
@@ -5540,6 +5541,7 @@
     <Content Include="Views\Account\Signin.cshtml" />
     <Content Include="Views\Account\Signup.cshtml" />
     <Content Include="Views\Account\Signout.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebMVCApplication.Domain\WebMVCApplication.Domain.csproj">

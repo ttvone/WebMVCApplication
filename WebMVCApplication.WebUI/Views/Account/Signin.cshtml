@@ -2,7 +2,7 @@
     ViewBag.Title = "Signin";
 }
 
-<div class="sufee-login d-flex align-content-center flex-wrap">
+<div class="sufee-login d-flex align-content-center flex-wrap" id="app">
     <div class="container">
         <div class="login-content">
             <div class="login-logo">
@@ -11,21 +11,21 @@
                 </a>
             </div>
             <div class="login-form">
-                <form>
+                <form v-on:submit.prevent="onSubmit()">
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" v-model="model.email" required>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" placeholder="Password" v-model="model.password" required>
                     </div>
                     <div class="checkbox">
                         <label>
                             <input type="checkbox"> Remember Me
                         </label>
                         <label class="pull-right">
-                            <a href="#">Forgotten Password?</a>
+                            @Html.ActionLink("Forgotten Password?", "ForgotPassword")
                         </label>
                     </div>
                     <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30 my-2">
@@ -40,3 +40,20 @@
     </div>
 </div>
 
+@section scripts {
+    <script>
+        (function ($) {
+            new Vue({
+                el: "#app",
+                data: {
+                    model: {}
+                },
+                methods: {
+                    onSubmit: function () {
+                        console.log(this.model);
+                    }
+                }
+            });
+        })(jQuery);
+    </script>
+}
