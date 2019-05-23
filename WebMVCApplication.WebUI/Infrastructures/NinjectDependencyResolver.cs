@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMVCApplication.Domain.Abstracts;
+using WebMVCApplication.Domain.Concretes;
 
 namespace WebMVCApplication.WebUI.Infrastructures
 {
@@ -28,7 +30,7 @@ namespace WebMVCApplication.WebUI.Infrastructures
 
         private void AddBindings()
         {
-
+            kernel.Bind<IUserRepository>().To<EFUserRepository>();
         }
     }
 }

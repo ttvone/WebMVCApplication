@@ -5,11 +5,7 @@
 <div class="sufee-login d-flex align-content-center flex-wrap" id="app">
     <div class="container">
         <div class="login-content">
-            <div class="login-logo">
-                <a href="index.html">
-                    <img class="align-content" src="~/Images/logo.png" alt="">
-                </a>
-            </div>
+            @Html.Partial("_Logo")
             <div class="login-form">
                 <form v-on:submit.prevent="onSubmit()">
                     <div class="form-group">

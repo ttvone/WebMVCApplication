@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMVCApplication.Domain.Abstracts;
+using WebMVCApplication.Domain.Entities;
 using WebMVCApplication.WebUI.Models;
 
 namespace WebMVCApplication.WebUI.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
+        private readonly IUserRepository userRepository;
+        public AccountController(IUserRepository userRepositoryParam)
+        {
+            userRepository = userRepositoryParam;
+        }
+
         public ActionResult Signin()
         {
             return View();
