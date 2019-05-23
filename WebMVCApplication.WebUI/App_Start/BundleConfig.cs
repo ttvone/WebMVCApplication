@@ -11,7 +11,8 @@ namespace WebMVCApplication.WebUI
             #region Assets
 
             bundles.Add(new StyleBundle("~/styles/assets").Include(
-               "~/Assets/css/style.css"
+               "~/Assets/css/style.css",
+               "~/Assets/css/main.css"
            ));
 
             bundles.Add(new StyleBundle("~/scripts/assets").Include(

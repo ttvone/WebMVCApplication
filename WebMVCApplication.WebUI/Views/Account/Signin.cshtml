@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Signin
+@{
     ViewBag.Title = "Signin";
 }
 
@@ -7,30 +8,44 @@
         <div class="login-content">
             @Html.Partial("_Logo")
             <div class="login-form">
-                <form v-on:submit.prevent="onSubmit()">
+                @using (Html.BeginForm())
+                {
                     <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Email" v-model="model.email" required>
+                        @Html.LabelFor(m => m.email)
+                        @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.email, null, new { @class = "invalid-feedback" })
                     </div>
+
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Password" v-model="model.password" required>
+                        @Html.LabelFor(m => m.password)
+                        @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.password, null, new { @class = "invalid-feedback" })
                     </div>
+
+                    if (ViewData.ModelState.Keys.Any(m => m.Equals("Exception")))
+                    {
+                        <div class="alert alert-danger">
+                            <i class="fa fa-warning"></i> @Html.ValidationMessage("Exception")
+                        </div>
+                    }
+
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Remember Me
+                            @Html.CheckBoxFor(m => m.remember) Remember Me
                         </label>
                         <label class="pull-right">
                             @Html.ActionLink("Forgotten Password?", "ForgotPassword")
                         </label>
                     </div>
+
                     <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30 my-2">
                         Sign in
                     </button>
+
                     <div class="register-link m-t-15 text-center">
                         <p>Don't have account ? @Html.ActionLink("Sign Up Here", "Signup")</p>
                     </div>
-                </form>
+                }
             </div>
         </div>
     </div>
@@ -38,18 +53,9 @@
 
 @section scripts {
     <script>
-        (function ($) {
-            new Vue({
-                el: "#app",
-                data: {
-                    model: {}
-                },
-                methods: {
-                    onSubmit: function () {
-                        console.log(this.model);
-                    }
-                }
-            });
-        })(jQuery);
+        new Vue({
+            el: "#app",
+            data: {}
+        });
     </script>
 }

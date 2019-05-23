@@ -19,10 +19,16 @@ namespace WebMVCApplication.Domain.Entities
         [StringLength(64)]
         public string UserPassword { get; set; }
 
-        public short UserRole { get; set; }
+        public UserRole UserRole { get; set; }
 
         public DateTime UserCreated { get; set; }
 
         public DateTime UserUpdated { get; set; }
+    }
+
+    public enum UserRole : short
+    {
+        Admin = 0,
+        Member = 1
     }
 }

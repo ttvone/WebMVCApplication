@@ -8,10 +8,9 @@ namespace WebMVCApplication.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
         {
-            ViewBag.Layout = "Layout2";
-
             return View();
         }
     }

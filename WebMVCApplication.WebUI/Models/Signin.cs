@@ -6,21 +6,16 @@ using System.Web;
 
 namespace WebMVCApplication.WebUI.Models
 {
-    public class Signup
+    public class Signin
     {
         [Required]
-        [EmailAddress]
         [Display(Name = "Email address")]
         public string email { get; set; }
 
         [Required]
         [Display(Name = "Password")]
-        [RegularExpression("^[A-z0-9]{5,20}$")]
         public string password { get; set; }
 
-        [Required]
-        [Display(Name = "Confirm Password")]
-        [Compare("password")]
-        public string confirm_password { get; set; }
+        public bool remember { get; set; }
     }
 }

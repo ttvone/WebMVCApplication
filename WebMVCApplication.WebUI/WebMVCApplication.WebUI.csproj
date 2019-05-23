@@ -152,11 +152,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructures\ExtensionMethods.cs" />
     <Compile Include="Infrastructures\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\Signin.cs" />
     <Compile Include="Models\Signup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\main.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\js\dashboard.js" />
     <Content Include="Assets\js\index.html" />
@@ -2177,7 +2180,6 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="_AdminTemplate\.gitattributes" />
@@ -5549,6 +5551,7 @@
     <Content Include="Views\Account\Signout.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\_Logo.cshtml" />
+    <Content Include="Views\Shared\_Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebMVCApplication.Domain\WebMVCApplication.Domain.csproj">

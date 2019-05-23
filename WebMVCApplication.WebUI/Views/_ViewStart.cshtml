@@ -1,12 +1,5 @@
 ﻿@{
-    switch (ViewContext.ViewBag.Layout)
-    {
-        case "Layout2":
-            Layout = "~/Views/Shared/_Layout2.cshtml";
-            break;
-
-        default:
-            Layout = "~/Views/Shared/_Layout1.cshtml";
-            break;
-    }
+    Layout = User.Identity.IsAuthenticated ?
+        "~/Views/Shared/_Layout2.cshtml" :
+        "~/Views/Shared/_Layout1.cshtml";
 }

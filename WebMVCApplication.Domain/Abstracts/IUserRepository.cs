@@ -9,6 +9,8 @@ namespace WebMVCApplication.Domain.Abstracts
 {
     public interface IUserRepository
     {
-        object Signup(User value);
+        IEnumerable<User> Items { get; }
+        void Signin(User value);
+        void Signup(User value);
     }
 }

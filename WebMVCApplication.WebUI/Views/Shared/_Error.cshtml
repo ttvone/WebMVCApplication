@@ -1,0 +1,47 @@
+﻿@using WebMVCApplication.WebUI.Infrastructures
+@model Exception
+@{
+    Exception innerException = Model.GetBaseException();
+    ViewBag.Title = innerException.Message;
+}
+
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+            <div class="card">
+                <h4 class="card-header">
+                    <i class="fa fa-warning"></i> Error page
+                </h4>
+                <div class="card-body">
+                    <div class="alert alert-danger rounded-0">
+                        <h6>Message : "@innerException.Message"</h6>
+                        <div>@innerException.Source : @innerException.Data</div>
+                        <hr />
+                        <div>@innerException.StackTrace</div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="@Url.Action("Index", "Home")" class="btn btn-dark min-w-200">
+                                    <i class="fa fa-home"></i> Go to home page
+                                </a>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <a href="javascript:history.back()" class="btn btn-danger min-w-200">
+                                    <i class="fa fa-reply"></i> Go to previous page
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section styles {
+    <style>
+        .min-w-200 {
+            min-width: 200px;
+        }
+    </style>
+}
